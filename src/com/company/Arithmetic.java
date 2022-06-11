@@ -2,49 +2,25 @@ package com.company;
 
 class Arithmetic {
 
-    private String input[];
-    private int output;
+    public int arithmetic(int first, int second, String operation) {
 
-    public String[] getInput() {
-        return input;
-    }
-
-    public void setInput(String[] input) {
-        this.input = input;
-    }
-
-    public int getOutput() {
-        return output;
-    }
-
-    public void setOutput(int output) {
-        this.output = output;
-    }
-
-    public Arithmetic(String[] input) {
-        this.input = input;
-    }
-
-    public int arithmetic() {
-        int first = Integer.parseInt(input[0]);
-        int second = Integer.parseInt(input[2]);
-        switch (input[1]) {
+        int result = 0;
+        switch (operation) {
             case ("+"):
-                output += first + second;
+                result += first + second;
                 break;
-
             case ("-"):
-                output += first - second;
+                result += first - second;
                 break;
-
             case ("*"):
-                output += first * second;
+                result += first * second;
                 break;
-
+            case ("/"):
+                result += first / second;
+                break;
             default:
-                output += first / second;
-                break;
+                throw new IllegalArgumentException("т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
         }
-        return output;
+        return result;
     }
 }

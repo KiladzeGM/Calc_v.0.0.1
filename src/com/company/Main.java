@@ -9,8 +9,8 @@ public class Main {
         String output;
         String[] strings = input.split(" ");
 
-        Definition definition = new Definition(strings);
-        output = definition.Check();
+        Detect detect = new Detect(strings);
+        output = detect.Check();
 
         return output;
     }
